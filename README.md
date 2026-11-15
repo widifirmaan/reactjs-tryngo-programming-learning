@@ -73,7 +73,6 @@ Tryngo is an open-source, 100% client-side interactive learning platform featuri
 | **CLI & Database Emulators** | Custom In-Memory State Engines (TypeScript) | Client-side Docker CLI simulator, Redis key-value engine, MongoDB document store, and procedural C# interpreter |
 | **Full-Stack Project Workspaces** | Virtual Multi-File Tree + StackBlitz SDK | Hierarchical file explorer with in-browser simulation and 1-click cloud sandbox launch |
 | **Content & Search** | React-Markdown, Remark GFM, Fuse.js | GitHub Flavored Markdown rendering and pre-indexed fuzzy search across 664 documents |
-| **Deployment & Edge Delivery** | Cloudflare Pages + Custom Prerender Engine | Fast global CDN delivery with static HTML route prerendering for SEO |
 
 ---
 
