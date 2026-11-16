@@ -159,8 +159,8 @@ Tryngo is an open-source, 100% client-side interactive learning platform featuri
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/widifirmaan/tryingo-go-lang-training-apps.git
-cd tryingo-go-lang-training-apps
+git clone https://github.com/widifirmaan/reactjs-tryngo-programming-learning.git
+cd reactjs-tryngo-programming-learning
 
 # 2. Enter web application directory and install dependencies
 cd apps/web
