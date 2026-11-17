@@ -4,20 +4,11 @@
 
 Tryngo is a 100% client-side interactive learning platform featuring 28 structured curricula (332 weekly modules) across frontend, backend, database, and devops technologies. It includes in-browser execution sandboxes, code playgrounds, interactive quizzes, and local progress tracking with zero account registration required.
 
-[![Live Demo](https://img.shields.io/badge/Demo-tryngo.widifirmaan.web.id-10B981?style=flat-square&logo=cloudflare&logoColor=white)](https://tryngo.widifirmaan.web.id)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript 5.8](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite 6](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Monaco Editor](https://img.shields.io/badge/Editor-Monaco-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)](https://microsoft.github.io/monaco-editor/)
-[![Deployment](https://img.shields.io/badge/Deployment-Cloudflare_Pages-F38020?style=flat-square&logo=cloudflare)](https://pages.cloudflare.com/)
-
----
-
-## Live Production
-
-- **URL:** [https://tryngo.widifirmaan.web.id](https://tryngo.widifirmaan.web.id)
-- **Deployment:** Cloudflare Pages (Edge delivery with prerendered static routes)
 
 ---
 
@@ -143,38 +134,44 @@ Tryngo is a 100% client-side interactive learning platform featuring 28 structur
 
 ---
 
-## Getting Started & Local Development
+## Local Setup & Deployment
 
-### Prerequisites
-- **Node.js 20+** or **Node.js 22+**
+### 1. Prerequisites
+
+- **Node.js**: Version `20.x` or `22.x`
 - **npm**, **pnpm**, or **yarn**
 
-### Installation & Setup
+### 2. Installation & Menjalankan Server Lokal
 
-> **Environment Variables:** No `.env` file or API keys are required. All curriculum parsing, search indexing, and code execution sandboxes run 100% client-side in the browser.
+Aplikasi ini berjalan 100% *client-side* tanpa kebutuhan konfigurasi database server eksternal:
 
 ```bash
 # 1. Clone repository
 git clone https://github.com/widifirmaan/reactjs-tryngo-programming-learning.git
 cd reactjs-tryngo-programming-learning
 
-# 2. Enter web application directory and install dependencies
+# 2. Masuk ke direktori web app & install dependencies
 cd apps/web
 npm install
 
-# 3. Start local Vite development server
+# 3. Jalankan server development Vite
 npm run dev
 ```
 
-### Production Build & Deployment
+Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-```bash
-# Build search index, quiz questions, sitemap, chunk Wasm, and compile Vite production bundle
-npm run build
+### 3. Panduan Uji Manual (Testing Checklist)
 
-# (Optional) Deploy directly to Cloudflare Pages via Wrangler CLI
-npm run deploy
-```
+Lakukan verifikasi manual berikut di browser:
+
+| No | Fitur yang Diuji | Langkah Pengujian | Hasil yang Diharapkan |
+| :---: | :--- | :--- | :--- |
+| 1 | **Grid Track Kurikulum** | Buka halaman utama `http://localhost:3000` | 28 track teknologi tampil lengkap dengan badge kategori dan estimasi durasi |
+| 2 | **Modul Pembelajaran** | Klik salah satu track (misal Go atau Python), buka modul Week 1 | Materi pembelajaran markdown termuat rapi; toggle bahasa (ID / EN) berfungsi instan |
+| 3 | **Interactive Code Playground** | Di halaman modul, klik tab playground Monaco Editor, lalu tekan tombol "Run" | Kode dieksekusi via runtime Wasm/JS dan output terminal tampil di konsol |
+| 4 | **Quiz Pemahaman** | Buka tab quiz pada modul yang aktif, pilih opsi jawaban | Validasi jawaban langsung diproses dengan skor real-time dan pembahasan |
+| 5 | **Fuzzy Search Modal** | Tekan `Ctrl + K` (atau `Cmd + K`), ketik kata kunci materi (misal "goroutine") | Modal Fuse.js muncul dan menampilkan daftar referensi kurikulum yang relevan |
+| 6 | **Persistensi Progress** | Tandai beberapa modul sebagai selesai, refresh browser | Status checklist dan progres pembelajaran tetap tersimpan melalui `localStorage` |
 
 ---
 
