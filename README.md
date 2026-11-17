@@ -1,6 +1,6 @@
 # Tryngo
 
-> Platform media pembelajaran pemrograman interaktif di browser dengan kurikulum terstruktur, code playground, dan evaluasi kuis otomatis.
+> Interactive in-browser developer learning platform featuring 28 structured curricula, Monaco code playgrounds, and automated multiple-choice quizzes.
 
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript 5.8](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -17,90 +17,90 @@
 
 ---
 
-## Screenshot
+## Screenshots
 
 | Desktop | Mobile |
 | :---: | :---: |
-| **Beranda Utama & Hero Section**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Beranda Utama & Hero Section**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
-| **Katalog 28 Track Teknologi**<br>![Katalog Track](screenshots/Katalog%20Track%20Desktop.png) | **Katalog 28 Track Teknologi**<br>![Katalog Track](screenshots/Katalog%20Track%20Mobile.png) |
-| **Silabus Kurikulum Modul Mingguan**<br>![Silabus Track](screenshots/Silabus%20Track%20Desktop.png) | **Silabus Kurikulum Modul Mingguan**<br>![Silabus Track](screenshots/Silabus%20Track%20Mobile.png) |
-| **Playground Kode Monaco & Eksekusi Browser**<br>![Playground](screenshots/Playground%20Desktop.png) | **Playground Kode Monaco & Eksekusi Browser**<br>![Playground](screenshots/Playground%20Mobile.png) |
-| **Arena Ujian Kuis Pilihan Ganda**<br>![Quiz](screenshots/Quiz%20Desktop.png) | **Arena Ujian Kuis Pilihan Ganda**<br>![Quiz](screenshots/Quiz%20Mobile.png) |
+| **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
+| **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Desktop.png) | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Mobile.png) |
+| **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Desktop.png) | **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Mobile.png) |
+| **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Desktop.png) | **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Mobile.png) |
+| **Interactive Multiple-Choice Quiz Arena**<br>![Quiz](screenshots/Quiz%20Desktop.png) | **Interactive Multiple-Choice Quiz Arena**<br>![Quiz](screenshots/Quiz%20Mobile.png) |
 
 ---
 
-## Fitur
+## Features
 
-- **28 Kurikulum Teknologi Terstruktur**: Roadmap belajar komprehensif mencakup Frontend (HTML5, CSS3, Tailwind, JS, TS, React, Vue, Next.js, Angular, Svelte), Backend (Go, Python, Django, Node.js, NestJS, PHP, Laravel, CodeIgniter 4, C#, Ruby on Rails, Spring Boot, Rust), Database (PostgreSQL, MySQL, MongoDB, Redis, GraphQL), dan DevOps (Docker).
-- **Engine Eksekusi Kode Langsung di Browser**:
-  - **Runtime WebAssembly (Wasm)**: Eksekusi Go via Yaegi & TinyGo, Python via Pyodide, PHP via php-wasm, Ruby via ruby-head-wasm, dan kueri relasional via sql.js.
-  - **Sandbox Client-Side**: Transformasi kode React via Babel Standalone, compiler SFC Vue 3, Svelte 5, dan live preview HTML/CSS.
-  - **Simulator Terminal In-Memory**: Simulator CLI Docker dengan lifecycle container/image, terminal memori Redis, dan engine dokumen MongoDB in-memory.
-- **Ekstraksi Kode Contoh Otomatis**: Playground secara otomatis mendeteksi dan memuat potongan kode yang paling relevan dari materi markdown mingguan yang aktif sehingga pengguna bisa langsung menjalankannya.
-- **Editor Monaco Terintegrasi**: Menggunakan engine editor VS Code di browser lengkap dengan penyorotan sintaks (*syntax highlighting*), nomor baris, dan pelipatan kode (*code folding*).
-- **Workspace Layar Terpisah (Split-Screen)**: Panel baca materi dan panel coding interaktif yang dapat diubah ukurannya (*resizable pane*) secara fleksibel.
-- **Bank Soal Kuis Pilihan Ganda**: Evaluasi pemahaman di setiap modul dengan penilaian instan, penjelasan kunci jawaban, dan rekapitulasi progres.
-- **Pencarian Fuzzy Cepat (`Ctrl + K`)**: Pencarian dokumen kurikulum toleran saltik (*typo-tolerant*) berbasis Fuse.js yang mengindeks materi secara instan.
-- **100% Client-Side & Tanpa Login**: Seluruh progres belajar, status modul selesai, dan skor kuis tersimpan aman di `localStorage` peramban tanpa kewajiban registrasi akun.
+- **28 Structured Technology Curricula**: Comprehensive roadmaps spanning Frontend (HTML5, CSS3, Tailwind, JS, TS, React, Vue, Next.js, Angular, Svelte), Backend (Go, Python, Django, Node.js, NestJS, PHP, Laravel, CodeIgniter 4, C#, Ruby on Rails, Spring Boot, Rust), Databases (PostgreSQL, MySQL, MongoDB, Redis, GraphQL), and DevOps (Docker).
+- **Dedicated In-Browser Execution Engines**:
+  - **WebAssembly Runtimes (Wasm)**: Real language interpreters running directly in the browser via Yaegi & TinyGo (Go), Pyodide (Python), php-wasm (PHP), ruby-head-wasm (Ruby), and sql.js (relational queries).
+  - **Client-Side Framework Sandboxes**: In-browser React code transformation via Babel Standalone, live Vue 3 SFC compiler, Svelte 5 compiler, and live HTML/CSS previews.
+  - **In-Memory Terminal & Database Emulators**: Client-side Docker CLI simulator with container/image lifecycle, Redis in-memory terminal, and MongoDB in-memory document store.
+- **Automatic Lesson Code Extraction**: The playground automatically detects and pre-fills the most relevant code snippet from the active lesson markdown so learners can run code immediately.
+- **Embedded Monaco Editor**: VS Code's editor engine in the browser featuring syntax highlighting, line numbers, and code folding.
+- **Resizable Split-Screen Workspace**: Draggable desktop split-pane to adjust reading material width against the interactive live code playground.
+- **Multiple-Choice Knowledge Check Quizzes**: Interactive quizzes across lesson modules with immediate scoring, answer keys, and progress tracking.
+- **Instant Typo-Tolerant Search (`Ctrl + K`)**: Pre-indexed fuzzy search indexing curriculum documents powered by Fuse.js with global keyboard shortcut navigation.
+- **100% Client-Side Privacy & Zero Login**: All learning progress, completed module checkmarks, and quiz scores persist securely in the browser's `localStorage`—no account registration required.
 
 ---
 
 ## Tech Stack
 
-| Kategori | Teknologi | Deskripsi / Peran |
+| Category | Technology | Description / Purpose |
 | :--- | :--- | :--- |
-| **Framework Utama** | React `19`, TypeScript `5.8`, Vite `6` | Fondasi Single Page Application modern dengan build cepat |
-| **Styling & Animasi** | Tailwind CSS `v4`, Motion (Framer Motion v12) | Antarmuka responsif dengan transisi animasi halus |
-| **Code Editor** | Monaco Editor (`@monaco-editor/react`) | Engine editor kode di peramban dengan syntax highlighting |
-| **Runtime WebAssembly** | Yaegi + TinyGo, Pyodide, php-wasm, ruby-head-wasm, sql.js | Interpreter bahasa pemrograman riil yang berjalan langsung di browser |
-| **Sandbox & Compiler** | Babel Standalone, Vue SFC Compiler, Svelte Compiler | Transformasi komponen dan evaluasi sintaks client-side |
-| **Parser Konten** | React-Markdown, Remark GFM, Fuse.js | Rendering dokumen format markdown dan pencarian fuzzy instan |
+| **Core Framework** | React `19`, TypeScript `5.8`, Vite `6` | Modern SPA foundation with fast HMR and optimized static build |
+| **Styling & Motion** | Tailwind CSS `v4`, Motion (Framer Motion v12) | Responsive design with dark/light themes and fluid UI transitions |
+| **Code Editor** | Monaco Editor (`@monaco-editor/react`) | In-browser VS Code editor engine with syntax highlighting |
+| **WebAssembly Engines** | Yaegi + TinyGo, Pyodide, php-wasm, ruby-head-wasm, sql.js | Real language interpreters running directly in browser memory |
+| **Sandboxes & Compilers** | Babel Standalone, Vue SFC Compiler, Svelte Compiler | In-browser component transformation and live preview compilers |
+| **Content & Search** | React-Markdown, Remark GFM, Fuse.js | Markdown documentation rendering and client-side fuzzy search |
 
 ---
 
-## Panduan Setup & Menjalankan Lokal
+## Local Setup & Deployment
 
-### 1. Prasyarat Sistem
+### 1. Prerequisites
 
-- **Node.js**: Versi `18.x` atau `20.x`
-- **npm** atau **pnpm**
-- Database: **Tidak membutuhkan database eksternal** (seluruh data tersimpan secara client-side di `localStorage`).
+- **Node.js**: Version `18.x` or `20.x`
+- **npm** or **pnpm**
+- Database: **No database required** (all progress persists locally in browser `localStorage`).
 
 ### 2. Environment Variables
 
-Tidak ada environment variable khusus yang dibutuhkan.
+No environment variables are required.
 
-### 3. Instalasi Dependensi
+### 3. Installation
 
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/widifirmaan/reactjs-tryngo-programming-learning.git
 cd reactjs-tryngo-programming-learning
 
-# Masuk ke direktori web app & install dependensi
+# Enter web app directory & install dependencies
 cd apps/web
 npm install
 ```
 
-### 4. Menjalankan Server Lokal
+### 4. Running the Local Server
 
 ```bash
-# Jalankan server Vite development
+# Start Vite development server
 npm run dev
 ```
 
-Buka URL yang tertera di terminal (biasanya [http://localhost:5173](http://localhost:5173)) di browser Anda.
+Open the URL shown in the terminal (usually [http://localhost:5173](http://localhost:5173)) in your browser.
 
-### 5. Panduan Uji Manual (Testing Checklist)
+### 5. Manual Testing Checklist
 
-| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan |
+| No | Feature | Test Steps | Expected Result |
 | :---: | :--- | :--- | :--- |
-| 1 | **Katalog Beranda** | Buka `http://localhost:5173` | Daftar 28 kartu teknologi tampil responsif lengkap dengan filter kategori |
-| 2 | **Navigasi Modul** | Klik salah satu kartu (misal: Go), pilih level Pemula | Silabus kurikulum mingguan tampil terstruktur |
-| 3 | **Code Playground** | Buka salah satu minggu materi | Editor Monaco termuat dengan kode contoh; klik tombol *Jalankan* dan amati output pada konsol |
-| 4 | **Pencarian Cepat** | Tekan tombol shortcut `Ctrl + K` (atau `Cmd + K`) | Modal pencarian fuzzy terbuka dan langsung memfilter daftar modul materi |
-| 5 | **Kuis Interaktif** | Buka menu Kuis, klik *Mulai Kuis*, pilih jawaban lalu klik *Lanjut* | Soal kuis tampil dengan pilihan A/B/C/D dan skor bertambah saat jawaban benar |
-| 6 | **Penyimpanan Progres** | Klik tombol *Selesai* pada salah satu minggu materi, lalu refresh browser | Modul tetap bertanda centang hijau sesuai data di `localStorage` |
+| 1 | **Homepage Catalog** | Open `http://localhost:5173` | Displays 28 technology cards with category filtering |
+| 2 | **Course Navigation** | Click any card (e.g., Go), select Beginner level | Weekly curriculum syllabus roadmap renders cleanly |
+| 3 | **Code Playground** | Open any weekly module | Monaco editor loads with example code; clicking *Jalankan* executes and prints output in the console pane |
+| 4 | **Fuzzy Search** | Press shortcut `Ctrl + K` (or `Cmd + K`) | Search modal opens and filters curriculum modules in real time |
+| 5 | **Interactive Quiz** | Open Quiz section, click *Mulai Kuis*, select an option and click *Lanjut* | Quiz questions load with A/B/C/D option cards and score updates upon correct answer |
+| 6 | **Progress Persistence** | Click *Selesai* on a lesson module, then refresh the page | Module remains marked as completed via `localStorage` |
 
 ---
 
