@@ -14,16 +14,28 @@ Tryngo is a 100% client-side interactive learning platform featuring 28 structur
 
 ## Showcase
 
-| Desktop | Mobile |
+### 1. Platform Entrance & Track Roadmaps (`/`)
+
+| Desktop Interface (MacBook Pro M4) | Mobile Interface (iPhone 16 Pro) |
 | :---: | :---: |
-| **Homepage Desktop**<br>![Homepage Desktop](screenshots/Tryngo%20Index%20Desktop.png) | **Homepage Mobile**<br>![Homepage Mobile](screenshots/Tryngo%20Index%20Mobile.png) |
-| **Stack Grid Desktop**<br>![Stack Grid Desktop](screenshots/Tryngo%20Grid%20Desktop.png) | **Mobile Navigation Menu**<br>![Mobile Navigation Menu](screenshots/Tryngo%20Hamburger%20Mobile.png) |
-| **Lesson Section Desktop**<br>![Lesson Section Desktop](screenshots/Tryngo%20Course%20Desktop.png) | **Lesson Section Mobile**<br>![Lesson Section Mobile](screenshots/Tryngo%20Course%20Mobile.png) |
-| **Playground Desktop**<br>![Playground Desktop](screenshots/Tryngo%20Playground%20Desktop.png) | **Playground Mobile**<br>![Playground Mobile](screenshots/Tryngo%20Playground%20Mobile.png) |
-| **Quiz Desktop**<br>![Quiz Desktop](screenshots/Tryngo%20Quiz%20Desktop.png) | **Quiz Mobile**<br>![Quiz Mobile](screenshots/Tryngo%20Quiz%20Mobile.png) |
-| **Quiz Question Desktop**<br>![Quiz Question Desktop](screenshots/Tryngo%20Quiz%20Question%20Desktop.png) | **Quiz Question Mobile**<br>![Quiz Question Mobile](screenshots/Tryngo%20Quiz%20Question%20Mobile.png) |
-| **Search Modal Desktop**<br>![Search Modal Desktop](screenshots/Tryngo%20Search%20Desktop.png) | **Search Modal Mobile**<br>![Search Modal Mobile](screenshots/Tryngo%20Search%20Mobile.png) |
-| **Settings Modal Desktop**<br>![Settings Modal Desktop](screenshots/Tryngo%20Settings%20Desktop.png) | **Settings Modal Mobile**<br>![Settings Modal Mobile](screenshots/Tryngo%20Settings%20Mobile.png) |
+| **Platform Homepage & Value Proposition**<br>![Tryngo Index Homepage Desktop](screenshots/Tryngo%20Index%20Homepage%20Desktop.png) | **Platform Homepage & Value Proposition**<br>![Tryngo Index Homepage Mobile](screenshots/Tryngo%20Index%20Homepage%20Mobile.png) |
+| **Curriculum 28 Stacks Categorized Grid**<br>![Tryngo Track Grid Showcase Desktop](screenshots/Tryngo%20Track%20Grid%20Showcase%20Desktop.png) | **Curriculum 28 Stacks Categorized Grid**<br>![Tryngo Track Grid Showcase Mobile](screenshots/Tryngo%20Track%20Grid%20Showcase%20Mobile.png) |
+
+### 2. Course Syllabus & In-Browser Monaco Playgrounds (`/course/*`)
+
+| Desktop Interface (MacBook Pro M4) | Mobile Interface (iPhone 16 Pro) |
+| :---: | :---: |
+| **Track Weekly Module Syllabus Directory**<br>![Tryngo Course Syllabus Desktop](screenshots/Tryngo%20Course%20Syllabus%20View%20Desktop.png) | **Track Weekly Module Syllabus Directory**<br>![Tryngo Course Syllabus Mobile](screenshots/Tryngo%20Course%20Syllabus%20View%20Mobile.png) |
+| **In-Browser Monaco Code Playground Split Screen**<br>![Tryngo Interactive Playground Desktop](screenshots/Tryngo%20Interactive%20Playground%20Desktop.png) | **In-Browser Monaco Code Playground Split Screen**<br>![Tryngo Interactive Playground Mobile](screenshots/Tryngo%20Interactive%20Playground%20Mobile.png) |
+
+### 3. Module Quizzes, Fuzzy Search & System Settings
+
+| Desktop Interface (MacBook Pro M4) | Mobile Interface (iPhone 16 Pro) |
+| :---: | :---: |
+| **Interactive Module Knowledge Check Quiz**<br>![Tryngo Interactive Module Quiz Desktop](screenshots/Tryngo%20Interactive%20Module%20Quiz%20Desktop.png) | **Interactive Module Knowledge Check Quiz**<br>![Tryngo Interactive Module Quiz Mobile](screenshots/Tryngo%20Interactive%20Module%20Quiz%20Mobile.png) |
+| **Typo-Tolerant Curriculum Search Modal (`Ctrl+K`)**<br>![Tryngo Fuzzy Search Modal Desktop](screenshots/Tryngo%20Fuzzy%20Search%20Modal%20Desktop.png) | **Typo-Tolerant Curriculum Search Modal (`Ctrl+K`)**<br>![Tryngo Fuzzy Search Modal Mobile](screenshots/Tryngo%20Fuzzy%20Search%20Modal%20Mobile.png) |
+| **System Preferences & Theme Settings Modal**<br>![Tryngo System Settings Modal Desktop](screenshots/Tryngo%20System%20Settings%20Modal%20Desktop.png) | **System Preferences & Theme Settings Modal**<br>![Tryngo System Settings Modal Mobile](screenshots/Tryngo%20System%20Settings%20Modal%20Mobile.png) |
+| **Mobile Drawer Navigation Menu**<br>![Tryngo Mobile Navigation Drawer Desktop](screenshots/Tryngo%20Mobile%20Navigation%20Drawer%20Desktop.png) | **Mobile Drawer Navigation Menu**<br>![Tryngo Mobile Navigation Drawer Mobile](screenshots/Tryngo%20Mobile%20Navigation%20Drawer%20Mobile.png) |
 
 ---
 
