@@ -1,4 +1,4 @@
-# Tryngo 🚀
+# Tryngo
 
 > Interactive in-browser developer learning platform featuring 28 structured curricula, Monaco code playgrounds, and automated multiple-choice quizzes.
 
@@ -22,14 +22,14 @@
 | Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
 | **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
+| **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Desktop.png) | **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Mobile.png) |
+| **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Desktop.png) | **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Mobile.png) |
 | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Desktop.png) | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Mobile.png) |
+| **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Desktop.png) | **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Mobile.png) |
 | **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Desktop.png) | **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Mobile.png) |
 | **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Desktop.png) | **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Mobile.png) |
 | **Online IDE Workspace**<br>![Online IDE](screenshots/Online%20IDE%20Desktop.png) | **Online IDE Workspace**<br>![Online IDE](screenshots/Online%20IDE%20Mobile.png) |
 | **Interactive Multiple-Choice Quiz Arena**<br>![Quiz](screenshots/Quiz%20Desktop.png) | **Interactive Multiple-Choice Quiz Arena**<br>![Quiz](screenshots/Quiz%20Mobile.png) |
-| **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Desktop.png) | **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Mobile.png) |
-| **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Desktop.png) | **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Mobile.png) |
-| **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Desktop.png) | **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Mobile.png) |
 
 ---
 
