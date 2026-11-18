@@ -1,4 +1,4 @@
-# Tryngo
+# Tryngo 🚀
 
 > Interactive in-browser developer learning platform featuring 28 structured curricula, Monaco code playgrounds, and automated multiple-choice quizzes.
 
@@ -13,13 +13,14 @@
 
 ## Live URL
 
-- **Production URL**: [https://tryngo.widifirmaan.web.id](https://tryngo.widifirmaan.web.id)
+- **Production URL:** [https://tryngo.widifirmaan.web.id](https://tryngo.widifirmaan.web.id)
+- **Deployment Platform:** Cloudflare Pages (`tryngo-web`)
 
 ---
 
-## Screenshots
+## Showcase
 
-| Desktop | Mobile |
+| Desktop (MacBook Pro M4) | Mobile (iPhone 16 Pro) |
 | :---: | :---: |
 | **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Desktop.png) | **Platform Homepage & Hero Section**<br>![Beranda](screenshots/Beranda%20Mobile.png) |
 | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Desktop.png) | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Mobile.png) |
@@ -33,7 +34,7 @@
 
 ---
 
-## Features
+## Fitur
 
 - **28 Structured Technology Curricula**: Comprehensive roadmaps spanning Frontend (HTML5, CSS3, Tailwind, JS, TS, React, Vue, Next.js, Angular, Svelte), Backend (Go, Python, Django, Node.js, NestJS, PHP, Laravel, CodeIgniter 4, C#, Ruby on Rails, Spring Boot, Rust), Databases (PostgreSQL, MySQL, MongoDB, Redis, GraphQL), and DevOps (Docker).
 - **Dedicated In-Browser Execution Engines**:
@@ -53,61 +54,78 @@
 
 | Category | Technology | Description / Purpose |
 | :--- | :--- | :--- |
-| **Core Framework** | React `19`, TypeScript `5.8`, Vite `6` | Modern SPA foundation with fast HMR and optimized static build |
-| **Styling & Motion** | Tailwind CSS `v4`, Motion (Framer Motion v12) | Responsive design with dark/light themes and fluid UI transitions |
-| **Code Editor** | Monaco Editor (`@monaco-editor/react`) | In-browser VS Code editor engine with syntax highlighting |
+| **Core Framework** | React `19.0.1`, TypeScript `5.8.2`, Vite `6.2.3` | Modern SPA foundation with fast HMR and optimized static build |
+| **Styling & Motion** | Tailwind CSS `v4.1.14`, Motion `12.23.24` | Responsive design with dark/light themes and fluid UI transitions |
+| **Code Editor** | Monaco Editor (`@monaco-editor/react` `4.7.0`) | In-browser VS Code editor engine with syntax highlighting |
 | **WebAssembly Engines** | Yaegi + TinyGo, Pyodide, php-wasm, ruby-head-wasm, sql.js | Real language interpreters running directly in browser memory |
 | **Sandboxes & Compilers** | Babel Standalone, Vue SFC Compiler, Svelte Compiler | In-browser component transformation and live preview compilers |
-| **Content & Search** | React-Markdown, Remark GFM, Fuse.js | Markdown documentation rendering and client-side fuzzy search |
+| **Content & Search** | React-Markdown `10.1.0`, Remark GFM `4.0.1`, Fuse.js `7.5.0` | Markdown documentation rendering and client-side fuzzy search |
 
 ---
 
-## Local Setup & Deployment
+## Tutorial Run Local & Setup
 
 ### 1. Prerequisites
-
-- **Node.js**: Version `18.x` or `20.x`
+- **Node.js**: Version `20.x` or `22.x`
 - **npm** or **pnpm**
 - Database: **No database required** (all progress persists locally in browser `localStorage`).
 
-### 2. Environment Variables
-
+### 2. Environment Variables Setup
 No environment variables are required.
 
 ### 3. Installation
-
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/widifirmaan/reactjs-tryngo-programming-learning.git
 cd reactjs-tryngo-programming-learning
 
-# Enter web app directory & install dependencies
+# 2. Enter web application directory & install dependencies
 cd apps/web
 npm install
 ```
 
 ### 4. Running the Local Server
-
 ```bash
 # Start Vite development server
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) (or the URL printed by Vite) in your browser.
 
-Open the URL shown in the terminal (usually [http://localhost:5173](http://localhost:5173)) in your browser.
+### 5. Production Build
+```bash
+# Build search index, quiz data, sitemap, split wasm, and bundle distribution
+npm run build
+```
 
-### 5. Manual Testing Checklist
+---
 
-| No | Feature | Test Steps | Expected Result |
-| :---: | :--- | :--- | :--- |
-| 1 | **Homepage Catalog** | Open `http://localhost:5173` | Displays 28 technology cards with category filtering |
-| 2 | **Course Navigation** | Click any card (e.g., Go), select Beginner level | Weekly curriculum syllabus roadmap renders cleanly |
-| 3 | **Code Playground** | Open any weekly module | Monaco editor loads with example code; clicking *Jalankan* executes and prints output in the console pane |
-| 4 | **Fuzzy Search** | Press shortcut `Ctrl + K` (or `Cmd + K`) | Search modal opens and filters curriculum modules in real time |
-| 5 | **Interactive Quiz** | Open Quiz section, click *Mulai Kuis*, select an option and click *Lanjut* | Quiz questions load with A/B/C/D option cards and score updates upon correct answer |
-| 6 | **Progress Persistence** | Click *Selesai* on a lesson module, then refresh the page | Module remains marked as completed via `localStorage` |
+## Testing & QA Automation
+
+Automated testing and QA verification are powered by the system's `qa-toolkit`:
+
+### 1. Playwright Test Suite
+End-to-end smoke verification covering homepage, hero showcase, and curriculum catalog:
+
+```bash
+cd /home/widifirmaan/Projects/qa-toolkit
+npx playwright test tests/playwright/tryngo.spec.js
+```
+
+### 2. Cypress E2E Verification
+Cross-browser regression testing on DOM structure and production stability:
+
+```bash
+cd /home/widifirmaan/Projects/qa-toolkit
+npx cypress run --spec cypress/e2e/tryngo.cy.js
+```
+
+### 3. QA Execution Summary
+- **Playwright**: 2 tests passed (Homepage load & Curriculum tracks catalog)
+- **Cypress**: 1 spec passed (Production URL rendering & DOM mount)
+- **Status**: ✅ All automated tests verified and passing
 
 ---
 
 ## Author
 
-Developed by **[Widi Firmansyah](https://widifirmaan.web.id)**.
+Made with ❤️ by **Widi Firmansyah** / [widifirmaan.web.id](https://widifirmaan.web.id)
