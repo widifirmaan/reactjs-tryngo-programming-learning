@@ -21,3 +21,5 @@ CHECKLIST_*.md
 .gemini/
 .claude/
 .cursor/
+presentation.html
+*.pdf
