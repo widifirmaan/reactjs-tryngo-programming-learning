@@ -25,7 +25,6 @@
 | **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Desktop.png) | **Global Search Modal**<br>![Search Modal](screenshots/Search%20Modal%20Mobile.png) |
 | **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Desktop.png) | **Website Settings Modal**<br>![Settings Modal](screenshots/Settings%20Modal%20Mobile.png) |
 | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Desktop.png) | **28 Technology Stacks Directory Grid**<br>![Katalog Track](screenshots/Katalog%20Track%20Mobile.png) |
-| **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Desktop.png) | **Track Catalog Filter & Sort Panel**<br>![Katalog Track Filter](screenshots/Katalog%20Track%20Filter%20Mobile.png) |
 | **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Desktop.png) | **Weekly Curriculum Syllabus Roadmap**<br>![Silabus Track](screenshots/Silabus%20Track%20Mobile.png) |
 | **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Desktop.png) | **Monaco Code Playground & Browser Execution**<br>![Playground](screenshots/Playground%20Mobile.png) |
 | **Online IDE Workspace**<br>![Online IDE](screenshots/Online%20IDE%20Desktop.png) | **Online IDE Workspace**<br>![Online IDE](screenshots/Online%20IDE%20Mobile.png) |
@@ -95,33 +94,6 @@ Open [http://localhost:3000](http://localhost:3000) (or the URL printed by Vite)
 # Build search index, quiz data, sitemap, split wasm, and bundle distribution
 npm run build
 ```
-
----
-
-## Testing & QA Automation
-
-Automated testing and QA verification are powered by the system's `qa-toolkit`:
-
-### 1. Playwright Test Suite
-End-to-end smoke verification covering homepage, hero showcase, and curriculum catalog:
-
-```bash
-cd /home/widifirmaan/Projects/qa-toolkit
-npx playwright test tests/playwright/tryngo.spec.js
-```
-
-### 2. Cypress E2E Verification
-Cross-browser regression testing on DOM structure and production stability:
-
-```bash
-cd /home/widifirmaan/Projects/qa-toolkit
-npx cypress run --spec cypress/e2e/tryngo.cy.js
-```
-
-### 3. QA Execution Summary
-- **Playwright**: 2 tests passed (Homepage load & Curriculum tracks catalog)
-- **Cypress**: 1 spec passed (Production URL rendering & DOM mount)
-- **Status**: ✅ All automated tests verified and passing
 
 ---
 
