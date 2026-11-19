@@ -37,7 +37,7 @@ const images = {
   quizMobile: encodeImage('Quiz Mobile.png'),
 };
 
-console.log('Menyusun HTML dokumen presentasi Tryngo...');
+console.log('Menyusun HTML presentasi dengan style murni Tryngo Warm Studio & Linen...');
 
 const htmlContent = `<!DOCTYPE html>
 <html lang="id">
@@ -46,22 +46,23 @@ const htmlContent = `<!DOCTYPE html>
   <title>Tryngo - In-Browser Developer Learning Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Syne:wght@700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-space: #090D16;
-      --bg-card: #0F172A;
-      --bg-surface: #1E293B;
-      --border-card: #1E293B;
-      --border-glow: #334155;
-      --border-active: #0EA5E9;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --accent-cyan: #38BDF8;
-      --accent-emerald: #10B981;
-      --accent-indigo: #818CF8;
-      --accent-amber: #F59E0B;
-      --accent-rose: #F43F5E;
+      --bg-linen: #EFECE6;
+      --card-white: #FFFFFF;
+      --text-moss: #1F2E2B;
+      --text-muted: #536B63;
+      --accent-forest: #2D4A3E;
+      --accent-terracotta: #D96B43;
+      --accent-sage: #8DAA9D;
+      --border-warm: rgba(31, 46, 43, 0.12);
+      --radius-studio: 24px;
+      --radius-sm: 14px;
+      --shadow-organic: 0 6px 24px rgba(31, 46, 43, 0.06);
+      --font-main: 'Outfit', -apple-system, sans-serif;
+      --font-title: 'Syne', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
 
     * {
@@ -70,13 +71,13 @@ const htmlContent = `<!DOCTYPE html>
       padding: 0;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
+      font-family: var(--font-main);
     }
 
     body {
-      background-color: #020617;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text-main);
-      line-height: 1.4;
+      background-color: var(--bg-linen);
+      color: var(--text-moss);
+      line-height: 1.45;
     }
 
     @page {
@@ -89,36 +90,37 @@ const htmlContent = `<!DOCTYPE html>
       height: 210mm;
       page-break-after: always;
       position: relative;
-      background: var(--bg-space);
+      background-color: var(--bg-linen);
       display: flex;
       flex-direction: column;
-      padding: 16mm 18mm;
+      padding: 14mm 18mm;
       overflow: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
-        linear-gradient(to right, rgba(51, 65, 85, 0.15) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(51, 65, 85, 0.15) 1px, transparent 1px);
-      background-size: 100% 100%, 32px 32px, 32px 32px;
+        radial-gradient(circle at 100% 0%, rgba(45, 74, 62, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(217, 107, 67, 0.06) 0%, transparent 50%);
     }
 
+    /* Top Accent Line */
     .slide::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #38BDF8, #818CF8, #10B981);
+      left: 18mm;
+      right: 18mm;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-forest), var(--accent-terracotta));
+      border-radius: 0 0 4px 4px;
       z-index: 50;
     }
 
+    /* Header */
     .slide-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 5mm;
-      border-bottom: 1px solid var(--border-glow);
       padding-bottom: 3.5mm;
+      border-bottom: 1px solid var(--border-warm);
     }
 
     .brand-cluster {
@@ -128,34 +130,39 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .brand-badge {
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan);
-      padding: 4px 10px;
-      font-family: 'JetBrains Mono', monospace;
+      background: rgba(45, 74, 62, 0.12);
+      color: var(--accent-forest);
+      padding: 5px 14px;
+      font-family: var(--font-mono);
       font-weight: 700;
       font-size: 10px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      border-radius: 4px;
+      border-radius: 50px;
     }
 
     .slide-section-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-title);
       font-size: 13px;
       font-weight: 700;
       color: var(--text-muted);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
     }
 
     .slide-number {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 700;
-      color: var(--accent-cyan);
+      color: var(--accent-forest);
+      background: var(--card-white);
+      padding: 4px 12px;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(31, 46, 43, 0.05);
+      border: 1px solid var(--border-warm);
     }
 
+    /* Body */
     .slide-body {
       display: grid;
       grid-template-columns: 1fr 1.35fr;
@@ -174,19 +181,20 @@ const htmlContent = `<!DOCTYPE html>
     .headline-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .slide-title {
-      font-size: 24px;
+      font-family: var(--font-title);
+      font-size: 26px;
       font-weight: 800;
       line-height: 1.2;
-      color: #FFFFFF;
+      color: var(--text-moss);
       letter-spacing: -0.02em;
     }
 
     .slide-desc {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-muted);
       line-height: 1.55;
     }
@@ -195,34 +203,27 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     .feature-card {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid var(--border-glow);
-      border-radius: 8px;
-      padding: 10px 14px;
-      border-left: 3px solid var(--accent-cyan);
+      background: var(--card-white);
+      border-radius: var(--radius-studio);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-organic);
+      border: 1px solid var(--border-warm);
+      border-left: 4px solid var(--accent-forest);
     }
 
-    .feature-card.emerald {
-      border-left-color: var(--accent-emerald);
-    }
-
-    .feature-card.indigo {
-      border-left-color: var(--accent-indigo);
-    }
-
-    .feature-card.amber {
-      border-left-color: var(--accent-amber);
+    .feature-card.coral {
+      border-left-color: var(--accent-terracotta);
     }
 
     .feature-card-title {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 3px;
+      color: var(--text-moss);
+      margin-bottom: 2px;
       letter-spacing: -0.01em;
     }
 
@@ -239,18 +240,19 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .metric-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glow);
-      border-radius: 6px;
-      padding: 8px 10px;
+      background: var(--card-white);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
       text-align: center;
+      box-shadow: var(--shadow-organic);
+      border: 1px solid var(--border-warm);
     }
 
     .metric-val {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 15px;
+      font-family: var(--font-mono);
+      font-size: 16px;
       font-weight: 800;
-      color: var(--accent-cyan);
+      color: var(--accent-forest);
     }
 
     .metric-lbl {
@@ -262,6 +264,7 @@ const htmlContent = `<!DOCTYPE html>
       margin-top: 2px;
     }
 
+    /* Visual Stage */
     .visual-stage {
       position: relative;
       display: flex;
@@ -270,6 +273,11 @@ const htmlContent = `<!DOCTYPE html>
       width: 100%;
       height: 100%;
       min-height: 0;
+      background: var(--card-white);
+      border-radius: var(--radius-studio);
+      box-shadow: 0 10px 30px rgba(31, 46, 43, 0.08);
+      border: 1px solid var(--border-warm);
+      padding: 16px;
     }
 
     .screenshot-desktop {
@@ -277,45 +285,48 @@ const htmlContent = `<!DOCTYPE html>
       max-height: 380px;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 10px 24px rgba(31, 46, 43, 0.12));
     }
 
     .screenshot-mobile {
       position: absolute;
-      right: 0px;
-      bottom: -8px;
-      max-height: 280px;
-      max-width: 28%;
+      right: 14px;
+      bottom: 8px;
+      max-height: 270px;
+      max-width: 29%;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0 12px 28px rgba(31, 46, 43, 0.18));
     }
 
+    /* Footer */
     .slide-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 5mm;
-      border-top: 1px solid var(--border-glow);
       padding-top: 3mm;
+      border-top: 1px solid var(--border-warm);
     }
 
     .footer-tech {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 10px;
+      font-weight: 600;
       color: var(--text-muted);
     }
 
     .footer-url {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 10px;
-      color: var(--accent-cyan);
+      font-weight: 700;
+      color: var(--accent-forest);
     }
 
     /* Cover Styling */
     .cover-body {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1.15fr 1fr;
       gap: 30px;
       align-items: center;
       flex: 1;
@@ -323,26 +334,27 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .cover-tagline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
       font-weight: 700;
-      color: var(--accent-cyan);
+      color: var(--accent-forest);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
 
     .cover-title {
+      font-family: var(--font-title);
       font-size: 38px;
       font-weight: 900;
-      color: #FFFFFF;
+      color: var(--text-moss);
       line-height: 1.15;
       letter-spacing: -0.03em;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .cover-desc {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 20px;
@@ -355,25 +367,26 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .spec-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glow);
-      border-radius: 8px;
+      background: var(--card-white);
+      border-radius: var(--radius-studio);
       padding: 10px 14px;
+      box-shadow: var(--shadow-organic);
+      border: 1px solid var(--border-warm);
     }
 
     .spec-k {
       font-size: 9px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     .spec-v {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--text-moss);
       margin-top: 2px;
     }
 
@@ -388,31 +401,34 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     .arch-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glow);
-      border-radius: 10px;
-      padding: 18px;
+      background: var(--card-white);
+      border-radius: var(--radius-studio);
+      padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      box-shadow: var(--shadow-organic);
+      border: 1px solid var(--border-warm);
     }
 
     .arch-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: #FFFFFF;
-      border-bottom: 1px solid var(--border-glow);
+      font-family: var(--font-title);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-moss);
+      border-bottom: 1px solid var(--border-warm);
       padding-bottom: 8px;
     }
 
     .arch-item {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--text-muted);
       line-height: 1.5;
     }
 
     .arch-item strong {
-      color: #F8FAFC;
+      color: var(--text-moss);
+      font-weight: 600;
     }
   </style>
 </head>
@@ -422,7 +438,7 @@ const htmlContent = `<!DOCTYPE html>
   <section class="slide">
     <div class="slide-header">
       <div class="brand-cluster">
-        <span class="brand-badge">DEVELOPER PLATFORM</span>
+        <span class="brand-badge">DEVELOPER LEARNING PLATFORM</span>
         <span class="slide-section-title">Dokumentasi Rekayasa Perangkat Lunak</span>
       </div>
       <div class="slide-number">01 / 10</div>
@@ -430,28 +446,28 @@ const htmlContent = `<!DOCTYPE html>
 
     <div class="cover-body">
       <div>
-        <div class="cover-tagline">Web Architecture & Interactive IDE</div>
+        <div class="cover-tagline">Warm Studio & In-Browser Code Editor</div>
         <h1 class="cover-title">Tryngo Platform Belajar Pemrograman Modern</h1>
         <p class="cover-desc">
-          Platform edukasi coding berbasis web dengan Monaco Editor terintegrasi, navigasi kurikulum modular, evaluasi kuis interaktif, dan omnibar pencarian cepat untuk pengalaman belajar pemrograman yang efisien langsung di browser.
+          Platform edukasi coding berbasis web dengan estetika Warm Studio (Linen #EFECE6 & Deep Moss #1F2E2B). Mengintegrasikan Monaco Editor di browser, omnibar pencarian Cmd+K, kurikulum bertingkat (Go, Python, JS), dan kuis evaluasi pemahaman real-time.
         </p>
 
         <div class="cover-specs">
           <div class="spec-card">
-            <div class="spec-k">Frontend Framework</div>
-            <div class="spec-v">React 19 & Vite 6</div>
+            <div class="spec-k">Design Aesthetic</div>
+            <div class="spec-v">Warm Studio Linen (#EFECE6)</div>
           </div>
           <div class="spec-card">
-            <div class="spec-k">In-Browser Code Editor</div>
-            <div class="spec-v">Monaco Editor Integration</div>
+            <div class="spec-k">In-Browser Editor</div>
+            <div class="spec-v">Monaco Editor Engine</div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-k">Core Typography</div>
+            <div class="spec-v">Outfit, Syne & JetBrains Mono</div>
           </div>
           <div class="spec-card">
             <div class="spec-k">State Management</div>
             <div class="spec-v">Zustand Store Persist</div>
-          </div>
-          <div class="spec-card">
-            <div class="spec-k">Styling System</div>
-            <div class="spec-v">Tailwind CSS v4</div>
           </div>
         </div>
       </div>
@@ -462,43 +478,43 @@ const htmlContent = `<!DOCTYPE html>
     </div>
 
     <div class="slide-footer">
-      <span class="footer-tech">React 19 + Monaco Editor + Tailwind CSS + Lucide Icons</span>
+      <span class="footer-tech">React 19 + Vite 6 + Monaco Editor + Outfit Font + Tailwind CSS</span>
       <span class="footer-url">tryngo.widifirmaan.web.id</span>
     </div>
   </section>
 
-  <!-- SLIDE 2: ARSITEKTUR & TECH STACK -->
+  <!-- SLIDE 2: ARSITEKTUR & DESAIN -->
   <section class="slide">
     <div class="slide-header">
       <div class="brand-cluster">
         <span class="brand-badge">ARCHITECTURE</span>
-        <span class="slide-section-title">Fondasi Sistem & Desain Perangkat Lunak</span>
+        <span class="slide-section-title">Fondasi Sistem & Desain Platform</span>
       </div>
       <div class="slide-number">02 / 10</div>
     </div>
 
-    <div class="headline-group" style="margin-bottom: 12px;">
-      <h2 class="slide-title">Arsitektur Modular & Ekosistem Teknologi</h2>
+    <div class="headline-group" style="margin-bottom: 8px;">
+      <h2 class="slide-title">Arsitektur Modular & Pengalaman Belajar Studio</h2>
       <p class="slide-desc">Struktur antarmuka reaktif yang dirancang untuk performa tinggi, isolasi komputasi kode di sisi klien, dan manajemen status yang konsisten.</p>
     </div>
 
     <div class="arch-grid">
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-cyan);">Core View & Routing</div>
+        <div class="arch-title" style="color: var(--accent-forest);">Core View & Routing</div>
         <div class="arch-item"><strong>React 19 Concurrent Mode:</strong> Rendering UI responsif dengan pemanfaatan useTransition dan code splitting modular.</div>
         <div class="arch-item"><strong>Vite 6 Fast Bundler:</strong> Konfigurasi build pipeline optimal dengan tree-shaking efisien untuk meminimalkan beban runtime.</div>
-        <div class="arch-item"><strong>Tailwind CSS v4:</strong> Utilitas styling berbasis CSS modern dengan performa kompilasi instan dan konsistensi token desain.</div>
+        <div class="arch-item"><strong>Estetika Linen & Moss:</strong> Palet warna hangat yang nyaman di mata untuk sesi belajar coding berjam-jam.</div>
       </div>
 
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-indigo);">Editor & Code Execution</div>
+        <div class="arch-title" style="color: var(--accent-terracotta);">Editor & Code Execution</div>
         <div class="arch-item"><strong>Monaco Editor:</strong> Engine editor tingkat industri dengan syntax highlighting, bracket matching, dan auto-completion terintegrasi.</div>
         <div class="arch-item"><strong>Client Code Runner:</strong> Eksekusi logika kode langsung di browser dengan runtime sandbox untuk keamanan dan respons instan.</div>
         <div class="arch-item"><strong>Output Virtual Console:</strong> Penangkapan output log dan pesan kesalahan secara terstruktur ke panel konsol antarmuka.</div>
       </div>
 
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-emerald);">State & User Persistence</div>
+        <div class="arch-title" style="color: #2E5A44;">State & User Persistence</div>
         <div class="arch-item"><strong>Zustand State Store:</strong> Pengelolaan state global yang ringan untuk progres modul belajar, skor kuis, dan riwayat aktivitas.</div>
         <div class="arch-item"><strong>LocalStorage Sync:</strong> Penyimpanan otomatis status pengerjaan latihan dan preferensi tema tanpa overhead dependensi eksternal.</div>
         <div class="arch-item"><strong>Omnibar Command Center:</strong> Navigasi keyboard cmd/ctrl+k terindeks untuk akses cepat ke materi dan konfigurasi.</div>
@@ -515,7 +531,7 @@ const htmlContent = `<!DOCTYPE html>
   <section class="slide">
     <div class="slide-header">
       <div class="brand-cluster">
-        <span class="brand-badge">USER INTERFACE</span>
+        <span class="brand-badge">HOMEPAGE</span>
         <span class="slide-section-title">Halaman Utama & Navigasi Belajar</span>
       </div>
       <div class="slide-number">03 / 10</div>
@@ -533,11 +549,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Navigasi Jalur Belajar Cepat</div>
             <div class="feature-card-text">Akses cepat menuju modul pemrograman populer seperti Go, Python, dan JavaScript dengan kartu status visual.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Desain Responsif Fleksibel</div>
             <div class="feature-card-text">Penyelarasan grid antarmuka yang presisi antara layout desktop layar lebar dan navigasi mobile touch-friendly.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Ringkasan Aktivitas Terkini</div>
             <div class="feature-card-text">Indikator visual bab yang sedang dipelajari dan progres penyelesaian kuis pengguna secara realtime.</div>
           </div>
@@ -553,8 +569,8 @@ const htmlContent = `<!DOCTYPE html>
             <div class="metric-lbl">Initial Load</div>
           </div>
           <div class="metric-box">
-            <div class="metric-val">0 Jitter</div>
-            <div class="metric-lbl">Layout Shift</div>
+            <div class="metric-val">24px</div>
+            <div class="metric-lbl">Studio Radius</div>
           </div>
         </div>
       </div>
@@ -593,11 +609,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Pencarian Fuzzy Cepat</div>
             <div class="feature-card-text">Algoritma pencarian teks real-time yang memfilter judul materi, bahasa pemrograman, dan kategori dalam waktu nyata.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Aksesibilitas Keyboard Lengkap</div>
             <div class="feature-card-text">Dukungan penuh navigasi tombol panah atas/bawah, enter untuk memilih, dan escape untuk menutup dialog pencarian.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Kategori Hasil Terstruktur</div>
             <div class="feature-card-text">Pemisahan otomatis hasil pencarian ke dalam kelompok materi kurikulum, latihan kuis, dan aksi pintas navigasi.</div>
           </div>
@@ -653,11 +669,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Kategorisasi Berdasarkan Bahasa</div>
             <div class="feature-card-text">Organisasi materi berdasarkan ekosistem bahasa pemrograman seperti Go, Python, dan JavaScript dengan kartu visual informatif.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Indikator Tingkat Kesulitan</div>
             <div class="feature-card-text">Label tingkat kesulitan mulai dari Beginner, Intermediate, hingga Advanced untuk panduan alur belajar terarah.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Status Progres Modul</div>
             <div class="feature-card-text">Tracking otomatis persentase penyelesaian modul yang tersimpan aman pada local store pengguna.</div>
           </div>
@@ -713,11 +729,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Struktur Bab Hierarkis</div>
             <div class="feature-card-text">Pembagian unit materi dari pengenalan sintaks, penanganan data, fungsi, hingga konsep pemrograman lanjut.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Checkpoint Praktik Langsung</div>
             <div class="feature-card-text">Setiap modul terhubung langsung ke editor online untuk memvalidasi pemahaman materi secara instan.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Penanda Selesai & Lanjutan</div>
             <div class="feature-card-text">Visual badge yang membedakan bab yang sudah diselesaikan, bab yang aktif, dan bab yang terkunci.</div>
           </div>
@@ -773,11 +789,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Integrasi Monaco Editor</div>
             <div class="feature-card-text">Engine editor berbasis VS Code dengan fitur auto-indent, snippet, pendeteksian kurung, dan penomoran baris rapi.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Terminal & Konsol Interaktif</div>
             <div class="feature-card-text">Area output langsung di bagian bawah editor yang menampilkan hasil kompilasi atau keluaran program secara seketika.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Manajemen File & Template Kode</div>
             <div class="feature-card-text">Tombol reset dan muat ulang template kode dasar untuk mempermudah latihan ulang dari posisi awal.</div>
           </div>
@@ -793,8 +809,8 @@ const htmlContent = `<!DOCTYPE html>
             <div class="metric-lbl">Run Output</div>
           </div>
           <div class="metric-box">
-            <div class="metric-val">Dark Theme</div>
-            <div class="metric-lbl">IDE Palette</div>
+            <div class="metric-val">Zero API</div>
+            <div class="metric-lbl">Client Sandbox</div>
           </div>
         </div>
       </div>
@@ -833,11 +849,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Pertanyaan Berbasis Cuplikan Kode</div>
             <div class="feature-card-text">Soal kuis dilengkapi snippet kode dengan formatting monospace untuk melatih pemahaman alur eksekusi logika.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Umpan Balik Skor Instan</div>
             <div class="feature-card-text">Penilaian otomatis seketika dengan penjelasan komprehensif pada setiap jawaban benar maupun salah.</div>
           </div>
-          <div class="feature-card indigo">
+          <div class="feature-card">
             <div class="feature-card-title">Pelacakan Tingkat Keberhasilan</div>
             <div class="feature-card-text">Statistik skor kuis disimpan ke profil pengguna untuk memberikan gambaran kesiapan melangkah ke bab berikutnya.</div>
           </div>
@@ -893,13 +909,13 @@ const htmlContent = `<!DOCTYPE html>
             <div class="feature-card-title">Penyesuaian Editor & Font</div>
             <div class="feature-card-text">Pilihan ukuran font, wrapping teks, serta pengaturan tab spacing untuk kenyamanan penulisan kode personal.</div>
           </div>
-          <div class="feature-card emerald">
+          <div class="feature-card coral">
             <div class="feature-card-title">Manajemen Cache & Riwayat Data</div>
             <div class="feature-card-text">Fitur reset progres dan pembersihan data lokal secara aman untuk memulai ulang jalur kurikulum bila diperlukan.</div>
           </div>
-          <div class="feature-card indigo">
-            <div class="feature-card-title">Pilihan Tema Visual</div>
-            <div class="feature-card-text">Pilihan tema visual gelap yang nyaman untuk mata saat sesi belajar dan pengkodean dalam waktu panjang.</div>
+          <div class="feature-card">
+            <div class="feature-card-title">Pilihan Tema Studio</div>
+            <div class="feature-card-text">Pilihan palet visual yang nyaman untuk mata saat sesi belajar dan pengkodean dalam waktu panjang.</div>
           </div>
         </div>
 
@@ -941,28 +957,28 @@ const htmlContent = `<!DOCTYPE html>
       <div class="slide-number">10 / 10</div>
     </div>
 
-    <div class="headline-group" style="margin-bottom: 12px;">
+    <div class="headline-group" style="margin-bottom: 8px;">
       <h2 class="slide-title">Spesifikasi Teknis & Kesiapan Produksi</h2>
       <p class="slide-desc">Ringkasan kapabilitas platform, metrik performa web, dan standarisasi arsitektur untuk deployment produksi.</p>
     </div>
 
     <div class="arch-grid">
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-cyan);">Metrik Performa & Audit Web</div>
+        <div class="arch-title" style="color: var(--accent-forest);">Metrik Performa & Audit Web</div>
         <div class="arch-item"><strong>Lighthouse Score:</strong> 98+ pada kategori Performance, Accessibility, Best Practices, dan SEO.</div>
         <div class="arch-item"><strong>First Contentful Paint:</strong> Tercapai di bawah 0.7 detik berkat optimasi static asset packaging.</div>
         <div class="arch-item"><strong>Zero Runtime Dependencies:</strong> Seluruh modul editor dan runner dijalankan mandiri di lingkungan browser pengguna.</div>
       </div>
 
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-emerald);">Aksesibilitas & Kualitas Kode</div>
+        <div class="arch-title" style="color: var(--accent-terracotta);">Aksesibilitas & Kualitas Kode</div>
         <div class="arch-item"><strong>Keyboard Navigation:</strong> Dukungan penuh navigasi keyboard menyeluruh pada seluruh dialog modal dan menu materi.</div>
         <div class="arch-item"><strong>Kompatibilitas Layar:</strong> Layout adaptif responsif dari resolusi mobile layar kecil hingga monitor ultrawide.</div>
         <div class="arch-item"><strong>Modular Codebase:</strong> Struktur direktori yang terorganisir rapi dengan pemisahan komponen, store, dan utilitas.</div>
       </div>
 
       <div class="arch-card">
-        <div class="arch-title" style="color: var(--accent-indigo);">Infrastruktur & Deployment</div>
+        <div class="arch-title" style="color: #2E5A44;">Infrastruktur & Deployment</div>
         <div class="arch-item"><strong>Static Site Delivery:</strong> Distribusi aset melalui Global CDN dengan caching header yang optimal.</div>
         <div class="arch-item"><strong>Keamanan Sandbox:</strong> Isolasi lingkungan eksekusi kode sisi klien untuk mencegah kebocoran konteks window.</div>
         <div class="arch-item"><strong>Reliabilitas Tinggi:</strong> Aplikasi dapat beroperasi penuh tanpa ketergantungan koneksi server eksekusi eksternal.</div>
@@ -984,7 +1000,7 @@ fs.writeFileSync(htmlFilePath, htmlContent, 'utf-8');
 console.log(`HTML presentasi disimpan di: ${htmlFilePath}`);
 
 async function renderPDF() {
-  console.log('Menjalankan Playwright Chromium untuk render PDF Tryngo...');
+  console.log('Menjalankan Playwright Chromium untuk render PDF Tryngo Warm Linen...');
   
   const playwrightPath = '/home/widifirmaan/Projects/qa-toolkit/node_modules/playwright/index.mjs';
   const { chromium } = await import(playwrightPath);
@@ -1017,7 +1033,7 @@ async function renderPDF() {
         margin: 0;
       }
       body {
-        background-color: #090D16 !important;
+        background-color: #EFECE6 !important;
       }
       .slide {
         page-break-after: unset !important;
@@ -1045,7 +1061,7 @@ async function renderPDF() {
   const slideStat = fs.statSync(slidePdfPath);
   const contStat = fs.statSync(contPdfPath);
 
-  console.log('\nPDF Tryngo berhasil dibuat:');
+  console.log('\nPDF Tryngo Warm Linen berhasil dibuat:');
   console.log(`- Multi-Page Deck: ${(slideStat.size / 1024 / 1024).toFixed(2)} MB (${slidePdfPath})`);
   console.log(`- Continuous Poster: ${(contStat.size / 1024 / 1024).toFixed(2)} MB (${contPdfPath})\n`);
 }
