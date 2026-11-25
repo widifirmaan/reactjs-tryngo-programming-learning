@@ -119,6 +119,7 @@ const LANGUAGE_MAP: Record<string, string> = {
   csharp: 'csharp',
   spring: 'java',
   codeigniter: 'php',
+  codeigniter4: 'php',
   django: 'python',
   nestjs: 'typescript',
 };

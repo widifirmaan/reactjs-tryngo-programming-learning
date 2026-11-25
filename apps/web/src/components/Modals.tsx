@@ -361,7 +361,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               <div className="shrink-0">
                 <span className="text-xs font-bold text-zinc-600">
                   {lang === 'id' ? 'Mencari di' : 'Searching'}{' '}
-                  <span className="text-[#2E5B44] font-black">864</span>{' '}
+                  <span className="text-[#2E5B44] font-black">664</span>{' '}
                   {lang === 'id' ? 'materi kursus' : 'course materials'}
                 </span>
               </div>

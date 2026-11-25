@@ -161,12 +161,14 @@ export default function App() {
 
   const t = translations[lang];
 
-  // Clear search, filter, and state on reload
+  // Clear search, filter, and state on reload (preserving deep-link /course/* boot)
   useEffect(() => {
     setSearchQuery('');
     setSortBy('default');
     setSelectedCategory('all');
-    setIsExploring(false);
+    if (!BOOT) {
+      setIsExploring(false);
+    }
 
     try {
       sessionStorage.removeItem('searchQuery');
@@ -256,9 +258,12 @@ export default function App() {
 
   // Hash routing - parse initial hash & listen for changes
   useEffect(() => {
-    const parseHash = () => {
+    const parseHash = (isInitialMount = false) => {
       const hash = window.location.hash.replace(/^#\/?/, '');
       if (!hash) {
+        if (isInitialMount && BOOT) {
+          return;
+        }
         setActiveCourseId(null);
         setIdeTarget(null);
         setQuizTarget(null);
@@ -316,9 +321,10 @@ export default function App() {
         }
       }
     };
-    parseHash();
-    window.addEventListener('hashchange', parseHash);
-    return () => window.removeEventListener('hashchange', parseHash);
+    parseHash(true);
+    const onHashChange = () => parseHash(false);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   // Responsive card/row count based on viewport height

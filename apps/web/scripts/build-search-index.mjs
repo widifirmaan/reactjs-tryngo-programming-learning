@@ -9,7 +9,7 @@ const OUTPUT_FILE = join(OUTPUT_DIR, 'search-index.json');
 
 const SLUG_NAME_MAP = {
   angular: 'Angular',
-  codeigniter: 'CodeIgniter',
+  codeigniter4: 'CodeIgniter 4',
   csharp: 'C#',
   css3: 'CSS3',
   django: 'Django',
