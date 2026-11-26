@@ -624,7 +624,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-              <h2 className="font-extrabold text-xs sm:text-sm md:text-base leading-none truncate">{track.name}</h2>
+              <h1 className="font-extrabold text-xs sm:text-sm md:text-base leading-none truncate">{track.name}</h1>
             </div>
             <p className="text-[9px] sm:text-[10px] text-zinc-500 dark:text-zinc-400 font-medium truncate mt-0.5">
               {track.category}
