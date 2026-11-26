@@ -613,6 +613,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
       <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 flex-wrap">
         <button
           onClick={onBack}
+          aria-label={isId ? 'Kembali ke daftar materi' : 'Back to courses'}
           className="p-2 rounded-xl bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 shadow-xs transition-all shrink-0"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-700 dark:text-zinc-300" />
@@ -626,7 +627,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
               <h1 className="font-extrabold text-xs sm:text-sm md:text-base leading-none truncate">{track.name}</h1>
             </div>
-            <p className="text-[9px] sm:text-[10px] text-zinc-500 dark:text-zinc-400 font-medium truncate mt-0.5">
+            <p className="text-[9px] sm:text-[10px] text-zinc-600 dark:text-zinc-300 font-medium truncate mt-0.5">
               {track.category}
             </p>
           </div>
@@ -635,6 +636,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
         {/* IDE Button */}
         <button
           onClick={() => onOpenIde?.(trackId)}
+          aria-label={isId ? 'Buka Online IDE' : 'Open Online IDE'}
           className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 shadow-xs hover:bg-white dark:hover:bg-zinc-700 transition-all text-xs sm:text-sm font-bold shrink-0"
           title={isId ? 'Buka Online IDE' : 'Open Online IDE'}
         >
@@ -645,6 +647,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
         {/* Quiz Button */}
         <button
           onClick={() => onOpenQuiz?.(slug, activeLevel)}
+          aria-label={isId ? 'Kuis semua materi' : 'Quiz all material'}
           className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 shadow-xs hover:bg-white dark:hover:bg-zinc-700 transition-all text-xs sm:text-sm font-bold shrink-0 text-zinc-700 dark:text-zinc-200"
           title={isId ? 'Kuis semua materi' : 'Quiz all material'}
         >
@@ -655,6 +658,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
         {/* Mark Week Complete */}
         <button
           onClick={handleToggleComplete}
+          aria-label={isCurrentWeekCompleted ? (isId ? 'Batal tandai selesai' : 'Undo week completed') : (isId ? 'Tandai minggu ini selesai' : 'Mark this week completed')}
           className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border shadow-xs transition-all text-xs sm:text-sm font-bold shrink-0 ${
             isCurrentWeekCompleted
               ? 'bg-[#2E5B44] text-white border-[#2E5B44] hover:bg-[#234735]'
@@ -672,6 +676,7 @@ ${isId ? 'Konten untuk modul ini belum tersedia.' : 'Content for this module is 
         <div className="relative shrink-0">
           <button
             onClick={() => setShowLevelPicker(!showLevelPicker)}
+            aria-label={isId ? `Pilih tingkat (${levelName})` : `Select level (${levelName})`}
             className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 shadow-xs hover:bg-white dark:hover:bg-zinc-700 transition-all text-xs sm:text-sm font-bold"
           >
             <span className="hidden sm:inline">{levelName}</span>

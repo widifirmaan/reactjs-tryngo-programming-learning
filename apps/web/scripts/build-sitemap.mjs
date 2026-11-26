@@ -30,7 +30,7 @@ urls.push(`  <url>
 for (const slug of tracks) {
   // Track page
   urls.push(`  <url>
-    <loc>${BASE_URL}/course/${slug}</loc>
+    <loc>${BASE_URL}/course/${slug}/</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -48,7 +48,7 @@ for (const slug of tracks) {
         if (weekMatch) {
           const week = weekMatch[1];
           urls.push(`  <url>
-    <loc>${BASE_URL}/course/${slug}/${level}/${week}</loc>
+    <loc>${BASE_URL}/course/${slug}/${level}/${week}/</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

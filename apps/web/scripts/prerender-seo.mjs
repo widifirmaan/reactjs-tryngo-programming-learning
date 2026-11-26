@@ -85,7 +85,7 @@ for (const [slug, [name, desc]] of Object.entries(META)) {
   const trackMeta = renderPage({
     title: `Belajar ${name} - Kurikulum Interaktif + Playground | Tryngo`,
     desc,
-    urlPath: `/course/${slug}`,
+    urlPath: `/course/${slug}/`,
     heading: `Belajar ${name}`,
   });
   count++;
@@ -105,7 +105,7 @@ for (const [slug, [name, desc]] of Object.entries(META)) {
       const weekHtml = renderPage({
         title: `${name} Minggu ${m[1]}: ${topic} | Tryngo`,
         desc: `Pelajari ${topic} pada modul ${name} tingkat ${levelLabel} Minggu ${m[1]} lengkap dengan In-Browser Code Playground & Kuis.`,
-        urlPath: `/course/${slug}/${level}/${m[1]}`,
+        urlPath: `/course/${slug}/${level}/${m[1]}/`,
         heading: `${name} (${levelLabel} - Minggu ${m[1]}): ${topic}`,
       });
       writePage(`/course/${slug}/${level}/${m[1]}`, weekHtml);

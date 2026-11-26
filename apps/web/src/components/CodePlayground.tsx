@@ -656,10 +656,10 @@ func main() {
         <div className={`${isHorizontal ? 'w-1/2 min-h-0 border-r' : 'flex-1 min-h-[120px] border-b'} border-zinc-700/50 flex flex-col`}>
           {/* Editor Header */}
           <div className="flex items-center justify-between px-3 py-1 bg-[#1e1e1e] border-b border-zinc-800">
-            <span className="text-[10px] text-zinc-500 font-mono">
+            <span className="text-[10px] text-zinc-300 font-mono">
               {language}.{LANGUAGE_MAP[language] === 'html' ? 'html' : LANGUAGE_MAP[language] === 'javascript' ? 'js' : LANGUAGE_MAP[language] === 'typescript' ? 'ts' : LANGUAGE_MAP[language]}
             </span>
-            <span className="text-[9px] text-zinc-600 hidden sm:inline">{isId ? 'Edit kode di sini' : 'Edit code here'}</span>
+            <span className="text-[9px] text-zinc-400 hidden sm:inline">{isId ? 'Edit kode di sini' : 'Edit code here'}</span>
           </div>
           <div className="flex-1 min-h-0">
             {editorReady ? (
@@ -693,12 +693,13 @@ func main() {
         <div className={`${isHorizontal ? 'w-1/2 min-h-0' : 'flex-1 min-h-[120px]'} flex flex-col bg-white dark:bg-zinc-900`}>
           {/* Panel Header */}
           <div className="flex items-center justify-between px-3 py-1 bg-[#1e1e1e] border-b border-zinc-800">
-            <span className="text-[10px] text-zinc-500 font-mono">
+            <span className="text-[10px] text-zinc-300 font-mono">
               {isId ? 'Hasil' : 'Result'}
             </span>
             <button
               onClick={runCode}
               disabled={isRunning}
+              aria-label={isRunning ? (isId ? 'Sedang menjalankan kode' : 'Running code') : (isId ? 'Jalankan kode' : 'Run code')}
               className="flex items-center gap-1 px-2.5 py-0 rounded-lg bg-[#2E5B44] hover:bg-[#234735] text-white text-[10px] sm:text-xs font-bold transition-all disabled:opacity-50 shadow-xs"
             >
               {isRunning ? (
