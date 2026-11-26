@@ -40,17 +40,31 @@ const META = {
 
 const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
 
-function renderPage({ title, desc, urlPath }) {
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderPage({ title, desc, urlPath, heading }) {
   const abs = `${CANON}${urlPath === '/' ? '/' : urlPath}`;
+  const safeTitle = escapeHtml(title);
+  const safeDesc = escapeHtml(desc);
+  const safeHeading = escapeHtml(heading || title);
   return template
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
-    .replace(/(<meta name="description" content=")[^"]*(")/, `$1${desc}$2`)
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${safeTitle}</title>`)
+    .replace(/(<meta name="title" content=")[^"]*(")/, `$1${safeTitle}$2`)
+    .replace(/(<meta name="description" content=")[^"]*(")/, `$1${safeDesc}$2`)
     .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${abs}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${abs}$2`)
-    .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${title}$2`)
-    .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${desc}$2`)
-    .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${title}$2`)
-    .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${desc}$2`);
+    .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${safeTitle}$2`)
+    .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${safeDesc}$2`)
+    .replace(/(<meta name="twitter:url" content=")[^"]*(")/, `$1${abs}$2`)
+    .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${safeTitle}$2`)
+    .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${safeDesc}$2`)
+    .replace(/<h1>[\s\S]*?<\/h1>/, `<h1>${safeHeading}</h1>`);
 }
 
 function writePage(urlPath, html) {
@@ -60,12 +74,19 @@ function writePage(urlPath, html) {
   fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
 }
 
+const LEVEL_NAMES = {
+  beginer: 'Pemula',
+  intermediate: 'Menengah',
+  advanced: 'Lanjutan',
+};
+
 let count = 0;
 for (const [slug, [name, desc]] of Object.entries(META)) {
   const trackMeta = renderPage({
     title: `Belajar ${name} - Kurikulum Interaktif + Playground | Tryngo`,
     desc,
     urlPath: `/course/${slug}`,
+    heading: `Belajar ${name}`,
   });
   count++;
   writePage(`/course/${slug}`, trackMeta);
@@ -77,9 +98,17 @@ for (const [slug, [name, desc]] of Object.entries(META)) {
     const idDir = path.join(slugDir, level, 'id');
     if (!fs.existsSync(idDir)) continue;
     for (const file of fs.readdirSync(idDir)) {
-      const m = file.match(/^week(\d+)-/);
+      const m = file.match(/^week(\d+)-(.*?)\.md$/);
       if (!m) continue;
-      writePage(`/course/${slug}/${level}/${m[1]}`, trackMeta);
+      const topic = m[2].replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      const levelLabel = LEVEL_NAMES[level] || level;
+      const weekHtml = renderPage({
+        title: `${name} Minggu ${m[1]}: ${topic} | Tryngo`,
+        desc: `Pelajari ${topic} pada modul ${name} tingkat ${levelLabel} Minggu ${m[1]} lengkap dengan In-Browser Code Playground & Kuis.`,
+        urlPath: `/course/${slug}/${level}/${m[1]}`,
+        heading: `${name} (${levelLabel} - Minggu ${m[1]}): ${topic}`,
+      });
+      writePage(`/course/${slug}/${level}/${m[1]}`, weekHtml);
       count++;
     }
   }
